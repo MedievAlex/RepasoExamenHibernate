@@ -5,6 +5,7 @@ Archivos que nos proporcionaran:
   - UTILIDADES 2025.
   - Plantilla del fichero de persistencia.
   - El pull de conexiones del Reto 1 CRUD utilizado para el Reto de Mongo.
+  - Los archovos .jar necesarios.
 
 Cosas importantes:
   - Será un CRUD por consola.
@@ -12,3 +13,4 @@ Cosas importantes:
   - Pedirá 4 excepciones.
   - Se utilizarán anotaciones de Hibernate.
   - Se pedirá el uso de un archivo de persistencia.xml JPA.
+
