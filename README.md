@@ -7,6 +7,8 @@ Archivos que nos proporcionaran:
 
 Cosas importantes:
   - Será un CRUD por consola.
+  - Tendrá aproximadamente 3-4 entidades.
   - Pedirá 4 excepciones.
   - Se utilizarán anotaciones de Hibernate.
   - Se pedirá el uso de un archivo de persistencia JPA.
+
