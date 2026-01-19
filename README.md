@@ -14,4 +14,16 @@ Cosas importantes:
   - Se utilizarán anotaciones de Hibernate.
   - Se pedirá el uso de un archivo de persistencia.xml JPA.
 
+﻿[EXAMEN MONGODB]
+
+Teoria:
+  - 15 preguntas.
+  - Verdadero o falso.
+
+Practica:
+  - 16 consultas.
+  - 4 agregate.
+  - Indices.
+
+
 
