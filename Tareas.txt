@@ -1,0 +1,28 @@
+ADTi
+- Ordenar Reviews por listas.
+
+DIN
+- Tests de nuestras ventanas.
+- MockDAO para los tests.
+- Barra de menú.
+- Manual de Usuario.
+- Jasper Reports.
+- Logger.
+- Empaquetar aplicación.
+
+DWCLIENTE
+- HTML
+- CSS
+- Añadir inserts de más juegos
+- MAIN MENU
+	- Añadir juego a My Games
+	- (Dividirlo por Plataforma)
+- LISTAS
+	- Mostrar lista
+	- Renombrar Lista
+	- Crear lista
+	- Juego a la Lista
+- REVIEWS
+	- Mostrar Reviews
+
+
