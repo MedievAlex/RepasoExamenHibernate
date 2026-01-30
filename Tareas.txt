@@ -1,28 +1,29 @@
-ADTi
-- Ordenar Reviews por listas.
+TAREAS PENDIENTES
 
 DIN
 - Tests de nuestras ventanas.
 - MockDAO para los tests.
-- Barra de menú.
-- Manual de Usuario.
+- Barra de menu.
+- Crear Manual de Usuario para añadirlo a la barra de menu.
 - Jasper Reports.
 - Logger.
 - Empaquetar aplicación.
 
 DWCLIENTE
-- HTML
-- CSS
-- Añadir inserts de más juegos
+- HTML.
+- CSS.
+- Añadir inserts de más juegos.
 - MAIN MENU
-	- Añadir juego a My Games
-	- (Dividirlo por Plataforma)
+	- Añadir juego a My Games.
+	- Dividirlo por Plataforma.
 - LISTAS
-	- Mostrar lista
-	- Renombrar Lista
-	- Crear lista
-	- Juego a la Lista
+	- Mostrar lista.
+	- Renombrar Lista.
+	- Crear lista.
+	- Juego a la Lista.
 - REVIEWS
-	- Mostrar Reviews
+	- Mostrar Reviews.
 
+DWCLIENTE
+- Revisar lógica POST de Listas.
 
