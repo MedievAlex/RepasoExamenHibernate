@@ -12,6 +12,3 @@ Cosas importantes:
   - Pedirá 4 excepciones.
   - Se utilizarán anotaciones de Hibernate.
   - Se pedirá el uso de un archivo de persistencia.xml JPA.
-
-
-
