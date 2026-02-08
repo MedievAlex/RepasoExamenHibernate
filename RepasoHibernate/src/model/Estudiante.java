@@ -12,8 +12,8 @@ import java.util.List;
 			query = "SELECT * FROM Estudiante"
 			),
 	@NamedQuery(
-			name = "Estudiante.listarEstudiantesMayoresDeEdad",
-			query = "SELECT * FROM Estudiante WHERE e_edad > 18"
+			name = "Estudiante.buscarEstudiantePorDNI",
+			query = "SELECT * FROM Estudiante WHERE :e_dni"
 			)
 	})
 @Table(name="Estudiante")

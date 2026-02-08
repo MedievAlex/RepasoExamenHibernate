@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import model.Estudiante;
 import utilidades.Utilidades;
@@ -29,7 +30,7 @@ public class Main {
                 	create(entityManager, estudiante);
                     break;
                 case 2: // 2. Read
-                	read(entityManager, estudiante);
+                	read(entityManager);
                     break;
                 case 3: // 3. Update
                 	update(entityManager, estudiante);
@@ -39,6 +40,8 @@ public class Main {
                     break;
             }
         } while (option != 0);
+        
+        System.out.println("***************************************");
         
         entityManagerFactory.close();
     }
@@ -62,14 +65,17 @@ public class Main {
          entityManager.close();
     }
 
-    private static void read(EntityManager entityManager, Estudiante estudiante) {
+    private static void read(EntityManager entityManager) {
     	List<Estudiante> estudiantes = entityManager.createNamedQuery("Estudiante.listarEstudiantes", Estudiante.class).getResultList();
-    	
     	entityManager.close();
     	
     	for(Estudiante est : estudiantes) {
     		est.toString();
     	}
+    	
+    	Query query = entityManager.createNamedQuery("Estudiante.listarEstudiantes", Estudiante.class);
+    	query.setParameter("e_dni", "123456789C");
+    	Estudiante estudiante = (Estudiante) query.getSingleResult();
     }
 
     private static void update(EntityManager entityManager, Estudiante estudiante) {
