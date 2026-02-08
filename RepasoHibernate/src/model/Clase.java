@@ -5,19 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
 
-/**
- *
- * @author Ekasestao
- */
-
 @Entity
 @Table(name = "Clase")
 public class Clase implements Serializable {
-    @Id
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="c_id")
     private Long id;
     
-    @Column(nullable = false, length = 40)
+    @Column(name="c_nombre", nullable = false, length = 40)
     private String nombre;
     
     @OneToMany(mappedBy = "clase")

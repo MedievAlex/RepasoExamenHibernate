@@ -1,9 +1,12 @@
 package main;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import model.Estudiante;
 import utilidades.Utilidades;
 
 public class Main {
@@ -12,15 +15,10 @@ public class Main {
     	EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistenceFile");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         
+        Estudiante estudiante = new Estudiante();
+        
         int option;
 
-        entityManager.getTransaction().begin();
-        entityManager.persist(""); // Insertar
-        entityManager.getTransaction().commit();
-
-        entityManager.close();
-        entityManagerFactory.close();
-        
         do {
             System.out.println("***************************************");
             option = showMenu();
@@ -28,19 +26,21 @@ public class Main {
 
             switch (option) {
                 case 1: // 1. Create
-                	create();
+                	create(entityManager, estudiante);
                     break;
                 case 2: // 2. Read
-                	read();
+                	read(entityManager, estudiante);
                     break;
                 case 3: // 3. Update
-                	update();
+                	update(entityManager, estudiante);
                     break;
                 case 4: // 3. Delete
-                	delete();
+                	delete(entityManager, estudiante);
                     break;
             }
         } while (option != 0);
+        
+        entityManagerFactory.close();
     }
     
     private static int showMenu() {
@@ -55,19 +55,33 @@ public class Main {
     	return Utilidades.leerInt(0, 4);
     }
     
-    private static void create() {
-    	
+    private static void create(EntityManager entityManager, Estudiante estudiante) {
+         entityManager.persist(estudiante); // Guardar en la Base de Datos
+         entityManager.getTransaction().commit();
+
+         entityManager.close();
     }
 
-    private static void read() {
+    private static void read(EntityManager entityManager, Estudiante estudiante) {
+    	List<Estudiante> estudiantes = entityManager.createNamedQuery("Estudiante.listarEstudiantes", Estudiante.class).getResultList();
     	
+    	entityManager.close();
+    	
+    	for(Estudiante est : estudiantes) {
+    		est.toString();
+    	}
     }
 
-    private static void update() {
-    	
+    private static void update(EntityManager entityManager, Estudiante estudiante) {
+    	estudiante.setEdad(18); // Lo actualiza en la Base de Datos tras el commit
+        entityManager.getTransaction().commit();
+
+        entityManager.close();
     }
 
-    private static void delete() {
-    	
+    private static void delete(EntityManager entityManager, Estudiante estudiante) {
+    	entityManager.remove(estudiante);
+
+        entityManager.close();
     }
 }

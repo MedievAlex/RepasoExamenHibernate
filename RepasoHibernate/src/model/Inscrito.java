@@ -3,15 +3,13 @@ package model;
 import java.io.Serializable;
 import javax.persistence.*;
 
-/**
- *
- * @author Ekasestao
- */
 
 @Entity
 @Table(name = "Inscrito")
 public class Inscrito implements Serializable {
-    @Id
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     

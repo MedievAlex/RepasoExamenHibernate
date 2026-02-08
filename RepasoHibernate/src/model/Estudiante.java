@@ -5,21 +5,29 @@ import java.util.ArrayList;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- *
- * @author Ekasestao
- */
 @Entity
+@NamedQueries({
+	@NamedQuery(
+			name = "Estudiante.listarEstudiantes",
+			query = "SELECT * FROM Estudiante"
+			),
+	@NamedQuery(
+			name = "Estudiante.listarEstudiantesMayoresDeEdad",
+			query = "SELECT * FROM Estudiante WHERE e_edad > 18"
+			)
+	})
 @Table(name="Estudiante")
 public class Estudiante implements Serializable {
-    @Id
-    @Column(length = 9)
+	private static final long serialVersionUID = 1L;
+
+	@Id
+    @Column(name="e_dni", length = 9)
     private String dni;
     
-    @Column(nullable = false, length = 30)
+    @Column(name="e_nombre", nullable = false, length = 30)
     private String nombre;
     
-    @Column(nullable = false)
+    @Column(name="e_edad",nullable = false)
     private int edad;
     
     @OneToMany(mappedBy = "estudiante")
