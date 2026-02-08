@@ -11,6 +11,24 @@ import java.util.List;
  */
 @Entity
 @Table(name="Estudiante")
+@NamedQueries({
+    @NamedQuery(
+        name = "Estudiante.findAll",
+        query = "SELECT e FROM Estudiante e"
+    ),
+    @NamedQuery(
+        name = "Estudiante.findByNombre",
+        query = "SELECT e FROM Estudiante e WHERE e.nombre = :nombre"
+    ),
+    @NamedQuery(
+        name = "Estudiante.findByEdadMayor",
+        query = "SELECT e FROM Estudiante e WHERE e.edad > :edad"
+    ),
+    @NamedQuery(
+        name = "Estudiante.modificarEdad",
+        query = "UPDATE FROM Estudiante set edad = :edad WHERE nombre = :nombre"
+    )
+})
 public class Estudiante implements Serializable {
     @Id
     @Column(length = 9)

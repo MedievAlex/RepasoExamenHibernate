@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-  <persistence-unit name="ExamenHibernate" transaction-type="RESOURCE_LOCAL">
-    <!-- Proveedor JPA -->
-    <!-- Aquí van las clases de entidad (OPCIONAL si usas auto-discovery) -->
-    <!-- Propiedades de configuración -->
-    <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <properties>
-      <!-- Conexión a la base de datos -->
-      <!-- Dialecto de Hibernate -->
-      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
-      <!-- GESTIÓN DEL ESQUEMA - MUY IMPORTANTE -->
-      <property name="hibernate.hbm2ddl.auto" value="update"/>
-      <!-- Opciones útiles para desarrollo -->
-      <property name="hibernate.show_sql" value="true"/>
-      <property name="hibernate.format_sql" value="true"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3307/examen?serverTimezone=Europe/Madrid&useSSL=false&allowPublicKeyRetrieval=true"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value=""/>
-    </properties>
-  </persistence-unit>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    
+    <persistence-unit name="ExamenHibernate" transaction-type="RESOURCE_LOCAL">
+        
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        
+        <class>model.Estudiante</class>
+        <class>model.Clase</class>
+        <class>model.Inscrito</class>
+        
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/examen?serverTimezone=Europe/Madrid&amp;useSSL=false&amp;allowPublicKeyRetrieval=true"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="abcd*1234"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+        
+    </persistence-unit>
 </persistence>

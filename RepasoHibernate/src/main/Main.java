@@ -1,16 +1,27 @@
 package main;
+import dao.DBImplementation;
+import dao.JPAUtil;
+import java.util.Scanner;
 
-/**
- *
- * @author Ekasestao
- */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        try (Scanner sc = new Scanner(System.in)) {
+            JPAUtil.getEntityManagerFactory();
+            
+            int opcion;
+            DBImplementation dao = new DBImplementation();
+            
+            System.out.println("Introduce una opción: ");
+            opcion = sc.nextInt();
+            
+            switch (opcion) {
+                case 1:
+                    dao.editarEstudiante(2, "Ekaitz");
+                    break;
+                case 2:
+                    dao.mayorEstudiante();
+                    break;
+            }
+        }
     }
-    
 }
